@@ -53,17 +53,87 @@ ds.show(false);
 |40.0|
 |50.0|
 
-|Percentile C1          |Percentile C0           |Percentile Nearest Rank|percentile_approx (spark builtin)|percentile (spark builtin)|
-|-----------------------|------------------------|-----------------------|---------------------------------|--------------------------|
-|[7.25, 9.0, 14.5, 20.0]|[6.75, 9.0, 15.25, 20.0]|[7.0, 8.0, 15.0, 20.0] |[7.0, 8.0, 15.0, 20.0]           |[7.25, 9.0, 14.5, 20.0]   |
-
-
+|Percentile C1                               |Percentile C0                               |Percentile Nearest Rank       |percentile_approx (spark builtin)|percentile (spark builtin)    |
+|--------------------------------------------|--------------------------------------------|------------------------------|---------------------------------|------------------------------|
+|16.0, 23.0, 29.0, 35.0, 50.0|15.0, 19.0, 26.0, 35.0, 50.0|15.0, 20.0, 20.0, 35.0, 50.0|20.0, 20.0, 20.0, 35.0, 50.0   |16.0, 23.0, 29.0, 35.0, 50.0|
 
 #### Test 2, Nearest rank example 2
+|data|
+|----|
+|3.0 |
+|6.0 |
+|7.0 |
+|8.0 |
+|8.0 |
+|10.0|
+|13.0|
+|15.0|
+|16.0|
+|20.0|
+
+|Percentile C1          |Percentile C0           |Percentile Nearest Rank|percentile_approx (spark builtin)|percentile (spark builtin)|
+|-----------------------|------------------------|-----------------------|---------------------------------|--------------------------|
+|7.25, 9.0, 14.5, 20.0|6.75, 9.0, 15.25, 20.0|7.0, 8.0, 15.0, 20.0 |7.0, 8.0, 15.0, 20.0           |7.25, 9.0, 14.5, 20.0   |
+
+
 #### Test 3, Nearest rank example 3
+|data|
+|----|
+|3.0 |
+|6.0 |
+|7.0 |
+|8.0 |
+|8.0 |
+|9.0 |
+|10.0|
+|13.0|
+|15.0|
+|16.0|
+|20.0|
+
+|Percentile C1         |Percentile C0         |Percentile Nearest Rank|percentile_approx (spark builtin)|percentile (spark builtin)|
+|----------------------|----------------------|-----------------------|---------------------------------|--------------------------|
+|7.5, 9.0, 14.0, 20.0|7.0, 9.0, 15.0, 20.0|7.0, 9.0, 15.0, 20.0 |7.0, 9.0, 15.0, 20.0           |7.5, 9.0, 14.0, 20.0    |
+
 #### Test 4, Interpolation between closest rank (C=1) example 1 (second variant)
+|data|
+|----|
+|15.0|
+|20.0|
+|35.0|
+|40.0|
+|50.0|
+
+|Percentile C1|Percentile C0       |Percentile Nearest Rank|percentile_approx (spark builtin)|percentile (spark builtin)|
+|-------------|--------------------|-----------------------|---------------------------------|--------------------------|
+|29.0       |26.0|20.0                 |20.0                           |29.0                    |
+
+
 #### Test 5, Interpolation between closest rank (C=1) example 2 
+|data|
+|----|
+|1.0 |
+|2.0 |
+|3.0 |
+|4.0 |
+
+|Percentile C1|Percentile C0|Percentile Nearest Rank|percentile_approx (spark builtin)|percentile (spark builtin)|
+|-------------|-------------|-----------------------|---------------------------------|--------------------------|
+|3.25       |3.75       |3.0                  |3.0                            |3.25                    |
+
 #### Test 6, Interpolation between closest rank (C=0) example 1 (third variant)
+|data|
+|----|
+|15.0|
+|20.0|
+|35.0|
+|40.0|
+|50.0|
+
+|Percentile C1                         |Percentile C0                         |Percentile Nearest Rank |percentile_approx (spark builtin)|percentile (spark builtin)|
+|--------------------------------------|--------------------------------------|------------------------|---------------------------------|--------------------------|
+|16.0, 23.0, 29.0, 48.0|15.0, 19.0, 26.0, 50.0|15.0, 20.0, 20.0, 50.0|20.0, 20.0, 20.0, 50.0         |16.0, 23.0, 29.0, 48.0  |
+
 
 
 
